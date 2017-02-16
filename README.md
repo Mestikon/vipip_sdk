@@ -9,7 +9,7 @@ Vipip SDK for PHP
 3. [Modules](#modules)
     * [User](#user)
 	* [Services](#services)
-4. [Service methods](#service)
+4. [Service methods](#service-methods)
 
 # Installation
 ---
@@ -18,7 +18,7 @@ It is recommended that you install the Vipip SDK library [through composer](http
 ```json
 {
     "require": {
-       "ferrumfist/vipip_sdk": "dev-master"
+       "ferrumfist/vipip_sdk": "^0.1"
     }
 }
 ```
