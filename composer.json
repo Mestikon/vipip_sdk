@@ -1,0 +1,21 @@
+{
+    "name": "ferrumfist/vipip_sdk",
+    "description": "PHP SDK for work with Vipip service",
+    "keywords": ["vipip", "SDK"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Spirin Yaroslav",
+            "email": "ferrumfist@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+	    "phpFastCache/phpFastCache": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Vipip\\": "/src"
+        }
+    }
+}
