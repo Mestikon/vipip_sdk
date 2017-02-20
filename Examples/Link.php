@@ -17,11 +17,11 @@ try{
     //Tariff
     $tariff = $link->getTariff();
     //id value from VipIP::module('link')->getTariffList();
-    $tariff->setTypeId(2);
+    $tariff->typeid = 2;
     //addtime value from VipIP::module('link')->getAddTimeList();
-    $tariff->setAddTime(60);
+    $tariff->addtime = 60;
     //intjumpid value from VipIP::module('link')->getIntJumpList();
-    $tariff->setIntJump(3);
+    $tariff->intjumpid = 3;
     $tariff->advside = \Vipip\Service\Settings\LinkTariff::ADVSIDE_DIFFERENT_PLACE;
     $link->setTariff($tariff);
 
@@ -46,10 +46,10 @@ try{
     //Calendar
     $cal = $link->getCalendar();
     $cal->setType(\Vipip\Service\Settings\Calendar::TYPE_WEEK);
-    $cal->setWeekDay('mon', 0, 15);
-    $cal->setWeekDay('mon', 1, 17);
+    $cal->setWeekDay(\Vipip\Service\Settings\Calendar::WEEKDAY_MONDAY, 0, 15);
+    $cal->setWeekDay(\Vipip\Service\Settings\Calendar::WEEKDAY_MONDAY, 1, 17);
     //...
-    $cal->setWeekDay('sun', 23, 91);
+    $cal->setWeekDay(\Vipip\Service\Settings\Calendar::WEEKDAY_SUNDAY, 23, 91);
 
     //timezone id \Vipip\Service\Settings\Calendar::getTimeZoneList();
     $cal->setTimeZone(4);
