@@ -176,7 +176,7 @@ class Calendar extends VipipObject {
      * @param $id
      * @throws \Exception
      */
-    public function setTimeZone($id){
+    public function setTimeZone_Id($id){
         $list = self::getTimeZoneList();
 
         $zone = array_filter($list, function($timezone) use ($id) {

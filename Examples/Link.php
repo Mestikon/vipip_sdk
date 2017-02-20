@@ -52,7 +52,7 @@ try{
     $cal->setWeekDay(\Vipip\Service\Settings\Calendar::WEEKDAY_SUNDAY, 23, 91);
 
     //timezone id \Vipip\Service\Settings\Calendar::getTimeZoneList();
-    $cal->setTimeZone(4);
+    $cal->timezone_id = 4;
     $link->setCalendar($cal);
 
     if( !$link->changeBalance(250, \Vipip\Service\Service::BALANCE_TYPE_SHOWS) ){

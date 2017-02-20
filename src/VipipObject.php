@@ -63,7 +63,10 @@ abstract class VipipObject{
      * @return null
      */
     public function __get($name){
-        if( array_key_exists($name, $this->attributes) )
+        if( method_exists($this, 'get'.$name) ){
+            return call_user_func([$this, 'get'.$name]);
+        }
+        elseif( array_key_exists($name, $this->attributes) )
             return $this->attributes[$name]['value'];
 
         return null;

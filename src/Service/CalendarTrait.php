@@ -5,7 +5,7 @@
 
 namespace Vipip\Service;
 use Vipip\Service\Settings\Calendar;
-use Vipip\Vipip;
+use Vipip\VipIP;
 
 /**
  * Class CalendarTrait
