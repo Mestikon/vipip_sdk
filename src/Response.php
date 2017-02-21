@@ -36,7 +36,6 @@ class Response {
         if( $response === null ){
             $this->ErrCode = "100";
             $this->ErrMsg = Message::t("Unable to decode JSON");
-            print_r($answer);
         }
 
         if( isset($response['error']) && $response['error'] ){
