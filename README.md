@@ -18,7 +18,7 @@ It is recommended that you install the Vipip SDK library [through composer](http
 ```json
 {
     "require": {
-       "ferrumfist/vipip_sdk": "^0.1"
+       "ferrumfist/vipip_sdk": "~0.1"
     }
 }
 ```
