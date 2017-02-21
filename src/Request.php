@@ -19,7 +19,7 @@ class Request {
 	/**
 	 * @const string URL
 	 */
-	const API_URL = 'http://local.api.vipip2';
+	const API_URL = 'https://api.vipip.ru';
 	
 	/**
 	 * @var string Authtorization token
