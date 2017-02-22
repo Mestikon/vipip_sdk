@@ -137,6 +137,36 @@ class Geo extends VipipObject {
     }
 
     /**
+     * Setting cities empty
+     */
+    public function clearCities(){
+        $this->setAttributes(['cities' => []]);
+    }
+
+    /**
+     * Setting regions empty
+     */
+    public function clearRegions(){
+        $this->setAttributes(['regions' => []]);
+    }
+
+    /**
+     * Setting countries empty
+     */
+    public function clearCountries(){
+        $this->setAttributes(['countries' => []]);
+    }
+
+    /**
+     * Clear geography
+     */
+    public function clear(){
+        $this->clearCities();
+        $this->clearRegions();
+        $this->clearCountries();
+    }
+
+    /**
      * List the attributes required to fulfill the request
      * @return array
      */

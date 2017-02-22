@@ -12,7 +12,7 @@ use phpFastCache\CacheManager;
  */
 class VipIP {
 
-    const VESRION = 0.1;
+    const VESRION = '0.1.1';
 
 	/**
 	 * @var string Authtorization token
