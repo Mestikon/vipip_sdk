@@ -37,7 +37,8 @@ class SocialTariff extends Tariff{
             ],
             'sex' => self::SEX_ANY,
             'url' =>'',
-            'message' => ''
+            'message' => '',
+            'answerid' => ''
         ]);
 
         parent::__construct($service);
@@ -56,18 +57,20 @@ class SocialTariff extends Tariff{
             'age_max' => $service->age_max,
             'sex' => $service->sex,
             'friends_id' => $service->friends_id,
-            'message' => $this->extractMessage($service->params)
+            'message' => $this->extractParam($service->params, 'message'),
+            'answerid' => $this->extractParam($service->params, 'answer_id')
         ]);
     }
 
     /**
-     * Extracting message from params if exists
+     * Extracting params by name from params if exists
      * @param $params
+     * @param $name
      * @return string
      */
-    private function extractMessage($params){
+    private function extractParam($params, $name){
         if( $params = json_decode($params,1) ){
-            return isset($params['message']) ? $params['message'] : '';
+            return isset($params[$name]) ? $params[$name] : '';
         }
         return '';
     }
@@ -84,7 +87,8 @@ class SocialTariff extends Tariff{
             'friends_id' => $this->friends_id,
             'sex' => $this->sex,
             'url' => $this->url,
-            'message' => $this->message
+            'message' => $this->message,
+            'answerid' => $this->answerid
         ];
     }
 

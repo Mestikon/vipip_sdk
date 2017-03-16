@@ -58,4 +58,14 @@ class Social extends ServiceModule{
 
         return $response->getAttributes();
     }
+
+    /**
+     * Getting question and answers for vk poll
+     * @param $url - post adress
+     * @return array|mixed|null
+     */
+    public function getVkPollAnswers($url){
+        $response = VipIP::get("social/vkpollanswers", ['url'=>$url]);
+        return $response->getAttributes();
+    }
 }
