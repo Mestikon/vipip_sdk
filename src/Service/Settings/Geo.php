@@ -10,30 +10,24 @@ use Vipip\VipipObject;
 
 /**
  * Class Geo work with geography
+ *
+ * @property array $cities
+ * @property array $regions
+ * @property array $countries
+ *
  * @package Vipip\Service\Settings
  */
 class Geo extends VipipObject {
+
+    protected $_cities = [];
+    protected $_regions = [];
+    protected $_countries = [];
 
     /**
      * Geo constructor.
      * @param Service|null $service
      */
     public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'cities' => [
-                'value' => [],
-                'readOnly' => true
-            ],
-            'regions' => [
-                'value' => [],
-                'readOnly' => true
-            ],
-            'countries' => [
-                'value' => [],
-                'readOnly' => true
-            ]
-        ]);
-
         if( $service ){
             $this->serviceInit($service);
         }
@@ -43,7 +37,7 @@ class Geo extends VipipObject {
      * Initialization of the data service class
      * @param $service
      */
-    private function serviceInit($service){
+    private function serviceInit(Service $service){
         $response = Vipip::get($service->getPrefix()."/placetarget", [
             'linkid' => $service->linkid
         ]);

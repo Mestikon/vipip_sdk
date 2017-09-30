@@ -11,5 +11,6 @@ return [
     "Unknown type of stage '{typeid}'" => "Неизвестный тип этапа '{typeid}'",
     "Unknown time zone id '{id}'" => "Неизвестный id часового пояса '{id}'",
     "Wrong number of days of the week" => "Неверное количество дней недели",
-    "Read-only property '{property}'" => "Свойство '{property}' только для чтения"
+    "Read-only property '{property}'" => "Свойство '{property}' только для чтения",
+    "Unknown property '{property}'" => "Неизвестное свойство '{property}'"
 ];

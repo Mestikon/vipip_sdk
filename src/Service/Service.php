@@ -11,6 +11,20 @@ use Vipip\VipipObject;
 
 /**
  * Class Service. Base class of service
+ *
+ * @property integer $linkid
+ * @property string $title
+ * @property string $status
+ * @property integer $timetargetid
+ * @property integer $placetargetid
+ * @property integer $typeid
+ * @property double $priceadv
+ * @property integer $showInDay
+ * @property integer $showedYesterday
+ * @property double $balance
+ * @property Tariff $tariff
+ * @property Geo $geo
+ *
  * @package Vipip\Service
  */
 abstract class Service extends VipipObject {
@@ -35,6 +49,18 @@ abstract class Service extends VipipObject {
     const STATUS_ENABLED = 'enabled';
     const STATUS_DISABLED = 'disabled';
 
+    protected $_linkid;
+    protected $_status;
+    protected $_title;
+    protected $_timetargetid;
+    protected $_placetargetid;
+    protected $_typeid;
+    protected $_priceadv;
+    protected $_showInDay;
+    protected $_showedYesterday;
+    protected $_showedToday;
+    protected $_balance;
+
     /**
      * @var string last error message
      */
@@ -45,29 +71,6 @@ abstract class Service extends VipipObject {
      * @param array $attributes
      */
 	public function __construct($attributes = []){
-        $this->extendAttributes([
-            'linkid' => [
-                'readOnly' => true
-            ],
-            'status' => [
-                'readOnly' => true
-            ],
-            'title' => [
-                'readOnly' => true
-            ],
-            'timetargetid' => 0,
-            'placetargetid' => 0,
-            'typeid' => '',
-            'priceadv' => 0,
-            'showInDay' => 0,
-            'showedYesterday' => 0,
-            'showedToday' => 0,
-            'balance' => [
-                'value' => 0,
-                'readOnly' => true
-            ]
-        ]);
-
 		$this->setAttributes($attributes);
 	}
 

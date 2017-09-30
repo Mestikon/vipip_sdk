@@ -11,5 +11,6 @@ return [
     "Unknown type of stage '{typeid}'" => "Невідомий тип стадії '{typeid}'",
     "Unknown time zone id '{id}'" => "Невідомий часовий пояс ідентифікатор '{id}'",
     "Wrong number of days of the week" => "Неправильне кількість днів тижня",
-    "Read-only property '{property}'" => "Властивість тільки для читання '{property}'"
+    "Read-only property '{property}'" => "Властивість тільки для читання '{property}'",
+    "Unknown property '{property}'" => "Невідоме властивість '{property}'"
 ];

@@ -7,6 +7,16 @@ namespace Vipip\Service;
 
 /**
  * Class Social
+ *
+ * @property \Vipip\Service\Settings\SocialTariff $tariff
+ * @property string $url
+ * @property integer $age_min
+ * @property integer $age_max
+ * @property string $sex
+ * @property integer $friends_id
+ * @property string $params
+ * @property \Vipip\Service\Settings\Calendar $calendar
+ *
  * @package Vipip\Service
  */
 class Social extends Service {
@@ -22,32 +32,10 @@ class Social extends Service {
      */
     protected $tariffClass = "Vipip\\Service\\Settings\\SocialTariff";
 
-    /**
-     * Social constructor.
-     * @param array $attributes
-     */
-    public function __construct($attributes){
-        $this->extendAttributes([
-            'url' => [
-                'readOnly' => true
-            ],
-            'age_min' => [
-                'readOnly' => true
-            ],
-            'age_max' => [
-                'readOnly' => true
-            ],
-            'sex' => [
-                'readOnly' => true
-            ],
-            'friends_id' => [
-                'readOnly' => true
-            ],
-            'params' => [
-                'readOnly' => true
-            ]
-        ]);
-
-        parent::__construct($attributes);
-    }
+    protected $_url;
+    protected $_age_min;
+    protected $_age_max;
+    protected $_sex;
+    protected $_friends_id;
+    protected $_params;
 }

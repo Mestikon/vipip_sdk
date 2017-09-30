@@ -11,6 +11,14 @@ use Vipip\VipipObject;
 
 /**
  * Class Tariff. Base class tariffs services
+ *
+ * @property integer $id
+ * @property integer $code
+ * @property string $title
+ * @property string $titleshort
+ * @property double $priceadv
+ * @property integer $timer
+ *
  * @package Vipip\Service\Settings
  */
 abstract class Tariff extends VipipObject {
@@ -20,32 +28,18 @@ abstract class Tariff extends VipipObject {
      */
     protected $vipip_moule;
 
+    protected $_id;
+    protected $_code;
+    protected $_title;
+    protected $_titleshort;
+    protected $_priceadv;
+    protected $_timer;
+
     /**
      * Tariff constructor.
      * @param Service|null $service
      */
     public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'id' => [
-                'readOnly' => true
-            ],
-            'code' => [
-                'readOnly' => true
-            ],
-            'title' => [
-                'readOnly' => true
-            ],
-            'titleshort' => [
-                'readOnly' => true
-            ],
-            'priceadv' => [
-                'readOnly' => true
-            ],
-            'timer' => [
-                'readOnly' => true
-            ]
-        ]);
-
         if( $service )
             $this->serviceInit($service);
     }

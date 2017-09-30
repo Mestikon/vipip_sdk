@@ -41,7 +41,7 @@ class VipIP {
     static private $modules = [];
 
     /**
-     * @var ExtendedCacheItemPoolInterface instance of cache class
+     * @var \phpFastCache\Core\Pool\ExtendedCacheItemPoolInterface instance of cache class
      */
     static private $cache;
 
@@ -51,7 +51,8 @@ class VipIP {
      * @param array $config name-value pairs that will be used to initialize the object properties
      */
 	static public function init($token, array $config = []){
-        self::$request = new Request();
+	    if( !self::$request )
+            self::$request = new Request();
 
         self::setToken($token);
 

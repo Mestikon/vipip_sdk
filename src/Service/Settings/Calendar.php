@@ -11,6 +11,11 @@ use Vipip\VipipObject;
 
 /**
  * Class Calendar
+ *
+ * @property array $timetarget
+ * @property integer $timezone_id
+ * @property integer $type
+ *
  * @package Vipip\Service\Settings
  */
 class Calendar extends VipipObject {
@@ -26,25 +31,15 @@ class Calendar extends VipipObject {
     const WEEKDAY_FRIDAY = 5;
     const WEEKDAY_SATURDAY = 6;
 
+    protected $_timetarget;
+    protected $_timezone_id;
+    protected $_type = self::TYPE_WEEK;
+
     /**
      * Calendar constructor.
      * @param Service|null $service
      */
     public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'timetarget' => [
-                'readOnly' => true
-            ],
-            'timezone_id' => [
-                'value' => 1,
-                'readOnly' => true
-            ],
-            'type' => [
-                'value' => self::TYPE_WEEK,
-                'readOnly' => true
-            ]
-        ]);
-
         //regenirate timetarget
         $this->clear();
 
@@ -57,7 +52,7 @@ class Calendar extends VipipObject {
      * Initialization of the data service class
      * @param $service
      */
-    private function serviceInit($service){
+    private function serviceInit(Service $service){
         $response = Vipip::get($service->getPrefix()."/timetarget", [
             'linkid' => $service->linkid
         ]);
@@ -94,8 +89,9 @@ class Calendar extends VipipObject {
     /**
      * Setting the number of shows on the day of the week and hour (only type week)
      * @param $dweek
-     * @param $hour
-     * @param $number
+     * @param int $hour
+     * @param int $number
+     * @throws \Exception
      */
     public function setWeekDay($dweek, $hour=0, $number=0){
         if( $this->type == self::TYPE_WEEK ){

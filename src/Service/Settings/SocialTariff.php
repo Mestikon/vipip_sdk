@@ -10,6 +10,9 @@ use Vipip\Vipip;
 
 /**
  * Class SocialTariff
+ *
+ * @property integer $friends_id
+ *
  * @package Vipip\Service\Settings
  */
 class SocialTariff extends Tariff{
@@ -23,26 +26,15 @@ class SocialTariff extends Tariff{
     const SEX_MALE = 'm';
     const SEX_FEMALE = 'f';
 
-    /**
-     * SocialTariff constructor.
-     * @param Service $service
-     */
-    public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'age_min' => 0,
-            'age_max' => 0,
-            'friends_id' => [
-                'value' => 0,
-                'readOnly' => true
-            ],
-            'sex' => self::SEX_ANY,
-            'url' =>'',
-            'message' => '',
-            'answerid' => ''
-        ]);
-
-        parent::__construct($service);
-    }
+    public $soc_code;
+    public $age_min;
+    public $age_max;
+    protected $_friends_id;
+    public $sex;
+    public $url;
+    public $message;
+    public $answerid;
+    public $desc;
 
     /**
      * Initialization of the data service class
