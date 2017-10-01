@@ -24,15 +24,45 @@ use Vipip\VipipObject;
 abstract class Tariff extends VipipObject {
 
     /**
-     * @var string name of module. Determined in a derived class
+     * Name of module. Determined in a derived class
+     * @var string
      */
     protected $vipip_moule;
 
+    /**
+     * Tariff identifier
+     * @var integer
+     */
     protected $_id;
+
+    /**
+     * tariff code
+     * @var integer
+     */
     protected $_code;
+
+    /**
+     * Name of tariff
+     * @var string
+     */
     protected $_title;
+
+    /**
+     * Short name of tariff
+     * @var string
+     */
     protected $_titleshort;
+
+    /**
+     * Price of tariff
+     * @var double
+     */
     protected $_priceadv;
+
+    /**
+     * Tariff timer
+     * @var integer
+     */
     protected $_timer;
 
     /**

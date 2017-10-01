@@ -32,10 +32,39 @@ class Social extends Service {
      */
     protected $tariffClass = "Vipip\\Service\\Settings\\SocialTariff";
 
+    /**
+     * URL of service
+     * @var string
+     */
     protected $_url;
+
+    /**
+     * Minimum age of service execution
+     * @var integer
+     */
     protected $_age_min;
+
+    /**
+     * Maximum age of service execution
+     * @var integer
+     */
     protected $_age_max;
+
+    /**
+     * Sex of service execution
+     * @var
+     */
     protected $_sex;
+
+    /**
+     * Friends number setting ID
+     * @var integer
+     */
     protected $_friends_id;
+
+    /**
+     * Additional service parameters
+     * @var string
+     */
     protected $_params;
 }

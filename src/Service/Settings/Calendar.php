@@ -31,8 +31,22 @@ class Calendar extends VipipObject {
     const WEEKDAY_FRIDAY = 5;
     const WEEKDAY_SATURDAY = 6;
 
+    /**
+     * Array of calendar settings
+     * @var array
+     */
     protected $_timetarget;
+
+    /**
+     * Time zone ID
+     * @var integer
+     */
     protected $_timezone_id;
+
+    /**
+     * Type of calendar
+     * @var int
+     */
     protected $_type = self::TYPE_WEEK;
 
     /**

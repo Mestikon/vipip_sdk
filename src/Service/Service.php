@@ -4,6 +4,7 @@
  */
 
 namespace Vipip\Service;
+use Vipip\Response;
 use Vipip\Service\Settings\Tariff;
 use Vipip\Vipip;
 use Vipip\Service\Settings\Geo;
@@ -49,20 +50,75 @@ abstract class Service extends VipipObject {
     const STATUS_ENABLED = 'enabled';
     const STATUS_DISABLED = 'disabled';
 
+    /**
+     * Service identifier
+     * @var integer
+     */
     protected $_linkid;
+
+    /**
+     * Service status
+     * @var string
+     */
     protected $_status;
+
+    /**
+     * Name of service
+     * @var string
+     */
     protected $_title;
+
+    /**
+     * Identifier calendar setting
+     * @var integer
+     */
     protected $_timetargetid;
+
+    /**
+     * Identifier geo setting
+     * @var integer
+     */
     protected $_placetargetid;
+
+    /**
+     * Identifier of tariff
+     * @var integer
+     */
     protected $_typeid;
+
+    /**
+     * Price of service
+     * @var double
+     */
     protected $_priceadv;
+
+    /**
+     * Number shows for the past day
+     * @var integer
+     */
     protected $_showInDay;
+
+    /**
+     * Number show per day
+     * @var integer
+     */
     protected $_showedYesterday;
+
+    /**
+     * Number show current day
+     * @var integer
+     */
     protected $_showedToday;
+
+    /**
+     * Balance of service
+     * @var integer
+     */
     protected $_balance;
 
     /**
-     * @var string last error message
+     * last error message
+     * @var string
      */
     protected $lastError;
 
@@ -116,7 +172,7 @@ abstract class Service extends VipipObject {
      * @param $response
      * @return bool
      */
-    protected function multipleResponse($response){
+    protected function multipleResponse(Response $response){
         $newAttributes = $response->getAttribute("links");
 
         $newAttributes = $newAttributes[$this->linkid];

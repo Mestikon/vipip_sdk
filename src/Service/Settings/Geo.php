@@ -19,8 +19,22 @@ use Vipip\VipipObject;
  */
 class Geo extends VipipObject {
 
+    /**
+     * List of cities
+     * @var array
+     */
     protected $_cities = [];
+
+    /**
+     * List of regions
+     * @var array
+     */
     protected $_regions = [];
+
+    /**
+     * List of countries
+     * @var array
+     */
     protected $_countries = [];
 
     /**

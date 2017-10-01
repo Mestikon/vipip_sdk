@@ -12,6 +12,7 @@ use Vipip\Vipip;
  * Class SocialTariff
  *
  * @property integer $friends_id
+ * @property string $desc
  *
  * @package Vipip\Service\Settings
  */
@@ -26,15 +27,59 @@ class SocialTariff extends Tariff{
     const SEX_MALE = 'm';
     const SEX_FEMALE = 'f';
 
+    /**
+     * Code of social service
+     * @var string
+     */
     public $soc_code;
+
+    /**
+     * Minimum age of service execution
+     * @var integer
+     */
     public $age_min;
+
+    /**
+     * Maximum age of service execution
+     * @var integer
+     */
     public $age_max;
+
+    /**
+     * Friends number setting ID
+     * @var integer
+     */
     protected $_friends_id;
+
+    /**
+     * Sex of service execution
+     * @var
+     */
     public $sex;
+
+    /**
+     * URL of service
+     * @var string
+     */
     public $url;
+
+    /**
+     * Message (used for some services)
+     * @var
+     */
     public $message;
+
+    /**
+     * ID of answer (used for VK poll)
+     * @var
+     */
     public $answerid;
-    public $desc;
+
+    /**
+     * Tariff description
+     * @var string
+     */
+    protected $_desc;
 
     /**
      * Initialization of the data service class
