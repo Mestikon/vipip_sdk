@@ -6,6 +6,7 @@
 namespace Vipip\Service\Settings;
 use Vipip\Message;
 use Vipip\Service\Service;
+use Vipip\Service\Social;
 use Vipip\Vipip;
 
 /**
@@ -86,7 +87,8 @@ class SocialTariff extends Tariff{
      * @param Service $service
      */
     public function serviceInit(Service $service){
-        $this->setTypeId($service->typeid);
+        /* @var Social $service */
+        $this->setId($service->typeid);
 
         $this->setAttributes([
             'url' => $service->url,

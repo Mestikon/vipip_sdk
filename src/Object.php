@@ -9,7 +9,7 @@ namespace Vipip;
  * Class VipipObject base object of SDK
  * @package Vipip
  */
-abstract class VipipObject{
+abstract class Object{
 
     /**
      * It is set to a true value, if necessary, change the properties of a read-only

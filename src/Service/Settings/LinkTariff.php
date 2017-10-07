@@ -5,11 +5,19 @@
 
 namespace Vipip\Service\Settings;
 use Vipip\Message;
+use Vipip\Service\Link;
 use Vipip\Service\Service;
 use Vipip\Vipip;
 
 /**
  * Class LinkTariff
+ *
+ * @property integer $auto
+ * @property integer $addtime
+ * @property integer $advside
+ * @property integer $intjumpid
+ * @property integer $maxshowuser
+ *
  * @package Vipip\Service\Settings
  */
 class LinkTariff extends Tariff{
@@ -23,38 +31,41 @@ class LinkTariff extends Tariff{
     const ADVSIDE_DIFFERENT_PLACE = 1;
 
     /**
-     * LinkTariff constructor.
-     * @param Service|null $service
+     * Autosurfing
+     * @var integer
      */
-    public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'auto' => [
-                'readOnly' => true
-            ],
-            // extra time
-            "addtime" => [
-                'value' => 0,
-                'readOnly' => true
-            ],
-            // How to display a control picture 0 - in one place, 1 - in different locations
-            "advside" => self::ADVSIDE_ONE_PLACE,
-            // depth of view
-            "intjumpid" => [
-                'value' => 0,
-                'readOnly' => true
-            ],
-            // the number of views per visitor
-            "maxshowuser" => '1'
-        ]);
+    protected $_auto;
 
-        parent::__construct($service);
-    }
+    /**
+     * Additional link display time in seconds
+     * @var integer
+     */
+    protected $_addtime = 0;
+
+    /**
+     * show captcha
+     * @var integer
+     */
+    public $advside = self::ADVSIDE_ONE_PLACE;
+
+    /**
+     * depth of site viewing by a visitor
+     * @var integer
+     */
+    protected $_intjumpid = 0;
+
+    /**
+     * The number of times a link is shown to one visitor
+     * @var integer
+     */
+    protected $_maxshowuser = 1;
 
     /**
      * Initialization of the data service class
      * @param Service $service
      */
     protected function serviceInit(Service $service){
+        /* @var Link $service */
         parent::serviceInit($service);
 
         $this->setAttributes([

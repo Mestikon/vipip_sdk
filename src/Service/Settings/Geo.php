@@ -6,7 +6,7 @@
 namespace Vipip\Service\Settings;
 use Vipip\Service\Service;
 use Vipip\Vipip;
-use Vipip\VipipObject;
+use Vipip\Object;
 
 /**
  * Class Geo work with geography
@@ -17,7 +17,7 @@ use Vipip\VipipObject;
  *
  * @package Vipip\Service\Settings
  */
-class Geo extends VipipObject {
+class Geo extends Object {
 
     /**
      * List of cities

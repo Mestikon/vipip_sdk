@@ -7,7 +7,7 @@ namespace Vipip\Service\Settings;
 use Vipip\Message;
 use Vipip\Service\Service;
 use Vipip\VipIP;
-use Vipip\VipipObject;
+use Vipip\Object;
 
 /**
  * Class Tariff. Base class tariffs services
@@ -21,7 +21,7 @@ use Vipip\VipipObject;
  *
  * @package Vipip\Service\Settings
  */
-abstract class Tariff extends VipipObject {
+abstract class Tariff extends Object {
 
     /**
      * Name of module. Determined in a derived class
@@ -79,7 +79,7 @@ abstract class Tariff extends VipipObject {
      * @param Service $service
      */
     protected function serviceInit(Service $service){
-        $this->setTypeId($service->typeid);
+        $this->setId($service->typeid);
     }
 
     /**
@@ -87,7 +87,7 @@ abstract class Tariff extends VipipObject {
      * @param $id
      * @throws \Exception
      */
-    public function setTypeId($id){
+    public function setId($id){
         $tariffs = VipIP::module($this->vipip_moule)->getTariffList();
 
         $tariffs = array_filter($tariffs, function($tariff) use ($id) {

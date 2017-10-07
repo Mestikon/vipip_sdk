@@ -9,7 +9,7 @@ namespace Vipip;
  * User is class for user information request
  * @package Vipip
  */
-class User {
+class User{
 
     /**
      * Getting user`s balance

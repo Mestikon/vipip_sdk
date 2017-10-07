@@ -7,7 +7,7 @@ namespace Vipip\Service\Settings;
 use Vipip\Message;
 use Vipip\Service\Service;
 use Vipip\Vipip;
-use Vipip\VipipObject;
+use Vipip\Object;
 
 /**
  * Class Calendar
@@ -18,7 +18,7 @@ use Vipip\VipipObject;
  *
  * @package Vipip\Service\Settings
  */
-class Calendar extends VipipObject {
+class Calendar extends Object {
     
     const TYPE_WEEK = 2;
     const TYPE_MONTH = 3;

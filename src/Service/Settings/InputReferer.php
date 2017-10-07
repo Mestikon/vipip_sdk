@@ -6,30 +6,35 @@
 namespace Vipip\Service\Settings;
 use Vipip\Service\Service;
 use Vipip\Vipip;
-use Vipip\VipipObject;
+use Vipip\Object;
 
 /**
  * Class InputReferer work with inputpoints and referers
+ *
+ * @property array $referer;
+ * @property array $inputpoint;
+ *
  * @package Vipip\Service\Settings
  */
-class InputReferer extends VipipObject {
+class InputReferer extends Object {
+
+    /**
+     * List of referers
+     * @var array
+     */
+    protected $_referer = [];
+
+    /**
+     * List of entry points
+     * @var array
+     */
+    protected $_inputpoint = [];
 
     /**
      * InputReferer constructor.
      * @param Service|null $service
      */
     public function __construct(Service $service = null){
-        $this->extendAttributes([
-            'referer' => [
-                'value' => [],
-                'readOnly' => true
-            ],
-            'inputpoint' => [
-                'value' => [],
-                'readOnly' => true
-            ]
-        ]);
-
         if( $service ){
             $this->serviceInit($service);
         }
@@ -37,9 +42,9 @@ class InputReferer extends VipipObject {
 
     /**
      * Initialization of the data service class
-     * @param $service
+     * @param Service $service
      */
-    private function serviceInit($service){
+    private function serviceInit(Service $service){
         $response = Vipip::get($service->getPrefix()."/inputreferer", [
             'linkid' => $service->linkid
         ]);

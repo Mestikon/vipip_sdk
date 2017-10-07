@@ -8,7 +8,7 @@ use Vipip\Response;
 use Vipip\Service\Settings\Tariff;
 use Vipip\Vipip;
 use Vipip\Service\Settings\Geo;
-use Vipip\VipipObject;
+use Vipip\Object;
 
 /**
  * Class Service. Base class of service
@@ -28,7 +28,7 @@ use Vipip\VipipObject;
  *
  * @package Vipip\Service
  */
-abstract class Service extends VipipObject {
+abstract class Service extends Object {
 
     /**
      * @var string service prefix name. Determined in a derived class

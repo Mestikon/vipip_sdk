@@ -24,7 +24,7 @@ abstract class ServiceModule {
 
     /**
      * Getting the list of service
-     * @param $ids array or comma separated string of services id
+     * @param array|string $ids array or comma separated string of services id
      * @return array list of services
      */
 	public function getList($ids = ''){
