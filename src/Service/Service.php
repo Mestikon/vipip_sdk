@@ -23,7 +23,6 @@ use Vipip\Object;
  * @property integer $showInDay
  * @property integer $showedYesterday
  * @property double $balance
- * @property Tariff $tariff
  * @property Geo $geo
  *
  * @package Vipip\Service
@@ -34,11 +33,6 @@ abstract class Service extends Object {
      * @var string service prefix name. Determined in a derived class
      */
     protected $prefix;
-
-    /**
-     * @var string service tariff classname. Determined in a derived class
-     */
-    protected $tariffClass;
 
     //replenish balance of services number of shows
     const BALANCE_TYPE_SHOWS = 1;
@@ -245,9 +239,7 @@ abstract class Service extends Object {
      * Getting tariff settings
      * @return mixed
      */
-    public function getTariff(){
-        return new $this->tariffClass($this);
-    }
+    abstract public function getTariff();
 
     /**
      * Getting geography settings

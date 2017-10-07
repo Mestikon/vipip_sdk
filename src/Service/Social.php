@@ -4,11 +4,12 @@
  */
 
 namespace Vipip\Service;
+use Vipip\Service\Settings\SocialTariff;
 
 /**
  * Class Social
  *
- * @property \Vipip\Service\Settings\SocialTariff $tariff
+ * @property SocialTariff $tariff
  * @property string $url
  * @property integer $age_min
  * @property integer $age_max
@@ -26,11 +27,6 @@ class Social extends Service {
      * @var string service prefix name
      */
     protected $prefix = 'social';
-
-    /**
-     * @var string service tariff classname
-     */
-    protected $tariffClass = "Vipip\\Service\\Settings\\SocialTariff";
 
     /**
      * URL of service
@@ -67,4 +63,12 @@ class Social extends Service {
      * @var string
      */
     protected $_params;
+
+    /**
+     * Getting tariff settings
+     * @return mixed
+     */
+    public function getTariff(){
+        return new SocialTariff($this);
+    }
 }

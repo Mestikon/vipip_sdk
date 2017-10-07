@@ -4,11 +4,13 @@
  */
 
 namespace Vipip\Service;
+use Vipip\Service\Settings\LinkTariff;
 
 /**
  * Class Link
  *
  * @property string $url
+ * @property LinkTariff $tariff
  * @property integer $maxshowuser
  * @property integer $advside
  * @property integer $addtime
@@ -26,11 +28,6 @@ class Link extends Service {
      * @var string service prefix name
      */
     protected $prefix = 'links';
-
-    /**
-     * @var string service tariff classname
-     */
-    protected $tariffClass = "Vipip\\Service\\Settings\\LinkTariff";
 
     /**
      * URL of service
@@ -73,4 +70,12 @@ class Link extends Service {
      * @var integer
      */
     protected $_referer_count;
+
+    /**
+     * Getting tariff settings
+     * @return mixed
+     */
+    public function getTariff(){
+        return new LinkTariff($this);
+    }
 }
