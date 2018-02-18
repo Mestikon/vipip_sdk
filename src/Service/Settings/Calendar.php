@@ -72,6 +72,10 @@ class Calendar extends Object {
         ]);
 
         $this->setAttributes($response->getAttributes());
+
+        //if timetarget is empty it should be filled default values
+        if( empty($this->timetarget) )
+            $this->clear();
     }
 
     /**

@@ -4,6 +4,8 @@
  */
 
 namespace Vipip\Service;
+use Vipip\Service\Settings\Calendar;
+use Vipip\Service\Settings\InputReferer;
 use Vipip\Service\Settings\LinkTariff;
 
 /**
@@ -17,6 +19,8 @@ use Vipip\Service\Settings\LinkTariff;
  * @property integer $intjumpid
  * @property integer $inputpoint_count
  * @property integer $referer_count
+ * @property InputReferer $inputreferer
+ * @property Calendar $calendar
  *
  * @package Vipip\Service
  */

@@ -51,6 +51,12 @@ abstract class Service extends Object {
     protected $_linkid;
 
     /**
+     * Group identifier
+     * @var integer
+     */
+    protected $_advid;
+
+    /**
      * Service status
      * @var string
      */
@@ -270,5 +276,15 @@ abstract class Service extends Object {
         }
         else
             return false;
+    }
+
+    public function move($advid){
+        $response  = Vipip::put($this->prefix."/move", [
+                'linkids' => $this->linkid,
+                'advid' => $advid
+            ]
+        );
+
+        return $this->multipleResponse($response);
     }
 }
