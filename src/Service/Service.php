@@ -278,6 +278,11 @@ abstract class Service extends Object {
             return false;
     }
 
+    /**
+     * Move service to other group
+     * @param $advid
+     * @return bool
+     */
     public function move($advid){
         $response  = Vipip::put($this->prefix."/move", [
                 'linkids' => $this->linkid,
