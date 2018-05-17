@@ -14,6 +14,7 @@ use Vipip\Object;
  * Class Service. Base class of service
  *
  * @property integer $linkid
+ * @property integer $advid
  * @property string $title
  * @property string $status
  * @property integer $timetargetid

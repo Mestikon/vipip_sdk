@@ -17,7 +17,8 @@ class Modules {
 	static private $allowModules = [
 		"user" => "Vipip\\User",
 		"link" => "Vipip\\ServiceModule\\Link",
-        "social" => "Vipip\\ServiceModule\\Social"
+        "social" => "Vipip\\ServiceModule\\Social",
+        "adv" => "Vipip\\AdvModule\\Module"
 	];
 
     /**
